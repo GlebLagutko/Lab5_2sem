@@ -19,15 +19,11 @@ const int Count = 3;
 void ShowUnorderedSet(unordered_set < Person , hash<Person>> People )
 {
 	wcout << L"UnorderedSet : ";
-	for (auto a : People)
-	{
-		a.ShowData();
-		wcout << endl;
-	}
+	for_each(People.begin(),People.end(), [](Person p) {p.ShowData();});
 
 }
 
-unordered_set<Person> FillUnorderedSet(queue<Person> p)
+unordered_set<Person, hash<Person>> FillUnorderedSet(queue<Person> p)
 {
 	unordered_set < Person, hash<Person>> People;
 	for (int i = 0; i < Count; i++)
@@ -56,13 +52,11 @@ set<Person> FillSet(queue<Person> p)
 void ShowSet(set < Person > People)
 {
 	wcout << L"Set : ";
-	for (auto a : People)
-	{
-		a.ShowData();
-		wcout << endl;
-	}
+	for_each(People.begin(),People.end(), [](Person p) {p.ShowData();});
 
 }
+
+
 
 queue<Person> FillQueue()
 {
